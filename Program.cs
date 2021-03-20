@@ -5,35 +5,37 @@ using System.Linq;
 
 namespace dotnet
 {
-   
-   
-   
+
     class Program
     {
         static void Main(string[] args)
         {
             
-            //int j = 0;
+            
             var cards = fiilDeck();
             var randomCards = shuffleDeck(cards,1000);
-
-            // while (j < 9)
-            // {
-            //     var myCards = dealHand(randomCards).OrderBy(x => x.rank).ToList();
-            //     printHand(myCards);
-            //     Console.WriteLine(Eval.evaluateDeck(myCards));
-            //     j++;
-            // }
+            //randomizePlayers(randomCards,5);
             testHand();
+        }
+
+        static void randomizePlayers(List<Card> randomCards,int index){
+            int j = 0;
+            while (j < index)
+            {
+                var myCards = dealHand(randomCards).OrderBy(x => x.rank).ToList();
+                printHand(myCards);
+                Console.WriteLine(Eval.evaluateDeck(myCards));
+                j++;
+            }
         }
 
         static void testHand(){
              var ownHand = new List<Card> {
                new Card(Suit.Spade,Rank.ten),
-               new Card(Suit.Heart,Rank.ten),
-               new Card(Suit.Spade,Rank.two),
-               new Card(Suit.Dimond,Rank.two),
-               new Card(Suit.Spade,Rank.seven)
+               new Card(Suit.Spade,Rank.king),
+               new Card(Suit.Spade,Rank.queen),
+               new Card(Suit.Spade,Rank.jack),
+               new Card(Suit.Spade,Rank.ace)
             };
             var myCards = ownHand.OrderBy(x => x.rank).ToList();
             printHand(myCards);
@@ -53,9 +55,8 @@ namespace dotnet
         }
 
         static List<Card> shuffleDeck(List<Card> cards,int index){
-            if(index == 0){
+            if(index == 0)
                 return cards;
-            }
             var retList = new List<Card>();
             Random rnd = new Random();
             var max = 0;
@@ -72,7 +73,6 @@ namespace dotnet
 
         static List<Card> fiilDeck(){
             var retCards = new List<Card>();
-            
             foreach (Suit suit in (Suit[]) Enum.GetValues(typeof(Suit))){
                 foreach(Rank rank in (Rank[]) Enum.GetValues(typeof(Rank))){
                     var card = new Card(suit,rank);
@@ -86,8 +86,8 @@ namespace dotnet
         {
             Console.WriteLine("---------------------------");
             foreach (var card in myCards)
-            {
-                Console.WriteLine(card.rank.ToString() + " of " + card.suit.ToString() + "s");
+            { 
+                Console.WriteLine(card.rank.ToString()  + " of "+ card.suit.ToString()+ "s");
 
             }
             Console.WriteLine("---------------------------------");

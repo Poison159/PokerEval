@@ -116,7 +116,7 @@ namespace dotnet{
             }
             return count;
         }
-
+        //Check if difference between card ranks is one unit
         static bool isDiffOne(List<Card> cards) {
             int i = 0;
             var ret = false;
@@ -130,7 +130,7 @@ namespace dotnet{
             }
             return ret;
         }
-
+        // Get number of 'key-pair values' that have a value higher than one
         static Dictionary<Rank,int> getRankOcuurences(List<Card> cards){
             var occurances = new Dictionary<Rank,int>();
             foreach(var card in cards){
@@ -142,7 +142,7 @@ namespace dotnet{
             }
             return occurances;
         }
-
+        // Reaturn number of suits in deck
         static int getSuitsFound(List<Card> cards){
             var occurances = new Dictionary<Suit,int>();
             var temp = "";
@@ -161,6 +161,7 @@ namespace dotnet{
             }
             return ret;
         }
+        //Return true if hand is royal-flush else return false
         static bool checkRoyalRank(List<Card> cards) {
             var ret = false;
             var royalRank = new List<Rank>{

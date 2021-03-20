@@ -12,35 +12,33 @@ namespace dotnet
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            int j = 0;
+            
+            //int j = 0;
             var cards = fiilDeck();
-            var randomCards = shuffleDeck(cards);
+            var randomCards = shuffleDeck(cards,1000);
 
-            while(i < 1000){
-                randomCards = shuffleDeck(randomCards);
-                i++;
-            }
+            // while (j < 9)
+            // {
+            //     var myCards = dealHand(randomCards).OrderBy(x => x.rank).ToList();
+            //     printHand(myCards);
+            //     Console.WriteLine(Eval.evaluateDeck(myCards));
+            //     j++;
+            // }
+            testHand();
+        }
 
-            while (j < 9)
-            {
-                var myCards = dealHand(randomCards).OrderBy(x => x.rank).ToList();
-                printHand(myCards);
-                Console.WriteLine(Eval.evaluateDeck(myCards));
-                j++;
-            }
+        static void testHand(){
+             var ownHand = new List<Card> {
+               new Card(Suit.Spade,Rank.ten),
+               new Card(Suit.Heart,Rank.ten),
+               new Card(Suit.Spade,Rank.two),
+               new Card(Suit.Dimond,Rank.two),
+               new Card(Suit.Spade,Rank.seven)
+            };
+            var myCards = ownHand.OrderBy(x => x.rank).ToList();
+            printHand(myCards);
 
-            //var ownHand = new List<Card> {
-            //    new Card(Suit.Spade,Rank.ten),
-            //    new Card(Suit.Heart,Rank.ten),
-            //    new Card(Suit.Spade,Rank.two),
-            //    new Card(Suit.Dimond,Rank.two),
-            //    new Card(Suit.Spade,Rank.seven)
-            //};
-            //var myCards = ownHand.OrderBy(x => x.rank).ToList();
-            //printHand(myCards);
-
-            //Console.WriteLine(Eval.evaluateDeck(myCards));
+            Console.WriteLine(Eval.evaluateDeck(myCards));
         }
         static List<Card> dealHand(List<Card> cards) {
             var retList = new List<Card>();
@@ -54,7 +52,10 @@ namespace dotnet
             return retList;
         }
 
-        static List<Card> shuffleDeck(List<Card> cards){
+        static List<Card> shuffleDeck(List<Card> cards,int index){
+            if(index == 0){
+                return cards;
+            }
             var retList = new List<Card>();
             Random rnd = new Random();
             var max = 0;
@@ -65,7 +66,8 @@ namespace dotnet
                     retList.Add(cards[i]);
                 cards.RemoveAt(i);
             }
-            return retList; 
+            cards = retList;
+            return shuffleDeck(cards,index - 1);
         }
 
         static List<Card> fiilDeck(){

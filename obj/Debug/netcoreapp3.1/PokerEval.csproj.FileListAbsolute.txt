@@ -1,0 +1,13 @@
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.exe
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.deps.json
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.runtimeconfig.json
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.runtimeconfig.dev.json
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.dll
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\bin\Debug\netcoreapp3.1\PokerEval.pdb
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.csprojAssemblyReference.cache
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.AssemblyInfoInputs.cache
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.AssemblyInfo.cs
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.csproj.CoreCompileInputs.cache
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.dll
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.pdb
+C:\Users\Zulu\Desktop\daily_coding\PokerEval\obj\Debug\netcoreapp3.1\PokerEval.genruntimeconfig.cache
